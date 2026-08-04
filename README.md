@@ -1,7 +1,7 @@
 # React-Client
 
-> **یک اپلیکیشن مدرن سمت کلاینت**  
-> ساخته شده با **React**، **TypeScript** و **Docker** برای اجرای آسان و مقیاس‌پذیر
+> **A Modern Client-Side Application**  
+> Built with **React**, **TypeScript**, and **Docker** for easy and scalable deployment
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.9-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18.2-61dafb.svg)](https://reactjs.org/)
@@ -10,121 +10,108 @@
 
 ---
 
-## 📋 فهرست مطالب
+## 📋 Table of Contents
 
-- [درباره پروژه](#-درباره-پروژه)
-- [ویژگی‌ها](#-ویژگی‌ها)
-- [پیش‌نیازها](#-پیش‌نیازها)
-- [شروع سریع](#-شروع-سریع)
-  - [اجرا با Docker Compose](#اجرا-با-docker-compose)
-  - [اجرا در حالت توسعه](#اجرا-در-حالت-توسعه)
-- [ساختار پروژه](#-ساختار-پروژه)
-- [متغیرهای محیطی](#-متغیرهای-محیطی)
-- [دستورات مفید](#-دستورات-مفید)
-- [استقرار (Deployment)](#-استقرار-deployment)
-- [تکنولوژی‌های استفاده شده](#-تکنولوژی‌های-استفاده-شده)
-- [مشارکت](#-مشارکت)
-- [مجوز](#-مجوز)
-- [تماس و پشتیبانی](#-تماس-و-پشتیبانی)
-
----
-
-## 🧐 درباره پروژه
-
-**React-Client** یک اپلیکیشن تک‌صفحه‌ای (SPA) است که با استفاده از **React** و **TypeScript** توسعه داده شده است. این پروژه با هدف ارائه یک قالب مدرن، ماژولار و آماده برای استقرار در محیط‌های مختلف (توسعه، تست و تولید) طراحی شده است.
-
-کانتینرایز شدن با **Docker** و **Docker Compose** باعث می‌شود که راه‌اندازی و استقرار پروژه در هر سیستمی به سادگی چند دستور انجام شود.
+- [About The Project](#-about-the-project)
+- [Features](#-features)
+- [Prerequisites](#-prerequisites)
+- [Getting Started](#-getting-started)
+  - [Running with Docker Compose](#running-with-docker-compose)
+  - [Running in Development Mode](#running-in-development-mode)
+- [Project Structure](#-project-structure)
+- [Environment Variables](#-environment-variables)
+- [Useful Commands](#-useful-commands)
+- [Deployment](#-deployment)
+- [Built With](#-built-with)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
 ---
 
-## ✨ ویژگی‌ها
+## 🧐 About The Project
 
-- ⚛️ **React 18** با جدیدترین قابلیت‌ها (Concurrent Features, Suspense)
-- 🦺 **TypeScript** برای کدنویسی امن و کاهش خطاهای زمان اجرا
-- 🐳 **Docker** و **Docker Compose** برای کانتینرایز کردن و اجرای آسان
-- 🔥 **Hot-Reload** در حالت توسعه برای مشاهده تغییرات لحظه‌ای
-- 🌐 **Nginx** به عنوان سرور وب برای سرویس‌دهی بهینه فایل‌های استاتیک در تولید
-- 🔐 **مدیریت متغیرهای محیطی** (Environment Variables) برای تنظیمات مختلف
-- 📦 **بهینه‌سازی Build** با استفاده از multi-stage builds در Docker
-- 🧪 آماده برای تست‌نویسی (قابلیت اضافه کردن Jest, React Testing Library)
+**React-Client** is a Single Page Application (SPA) built with **React** and **TypeScript**. This project aims to provide a modern, modular, and production-ready template that can be deployed across various environments (development, testing, and production).
+
+Containerization with **Docker** and **Docker Compose** ensures that the application can be set up and deployed on any system with just a few commands.
 
 ---
 
-## 📦 پیش‌نیازها
+## ✨ Features
 
-برای اجرای این پروژه، به ابزارهای زیر نیاز دارید:
-
-| ابزار          | نسخه پیشنهادی    | لینک نصب                                     |
-| -------------- | ---------------- | -------------------------------------------- |
-| Node.js        | v18 یا بالاتر    | [دانلود](https://nodejs.org/)                |
-| npm            | v8 یا بالاتر     | همراه با Node.js                             |
-| Docker         | v20.10 یا بالاتر | [دانلود](https://www.docker.com/get-started) |
-| Docker Compose | v2.0 یا بالاتر   | همراه با Docker                              |
+- ⚛️ **React 18** with the latest capabilities (Concurrent Features, Suspense)
+- 🦺 **TypeScript** for type-safe code and reduced runtime errors
+- 🐳 **Docker** and **Docker Compose** for containerization and easy deployment
+- 🔥 **Hot-Reload** in development mode for instant feedback
+- 🌐 **Nginx** as a web server for optimized static file serving in production
+- 🔐 **Environment Variables** management for different configurations
+- 📦 **Optimized Builds** using multi-stage builds in Docker
+- 🧪 Ready for testing (easily extendable with Jest, React Testing Library)
 
 ---
 
-## 🚀 شروع سریع
+## 📦 Prerequisites
 
-### ۱. کلون کردن مخزن
+To run this project, you'll need the following tools:
 
-ابتدا پروژه را از GitHub کلون کنید:
+| Tool           | Recommended Version | Installation Link                              |
+| -------------- | ------------------- | ---------------------------------------------- |
+| Node.js        | v18 or higher       | [Download](https://nodejs.org/)                |
+| npm            | v8 or higher        | Included with Node.js                          |
+| Docker         | v20.10 or higher    | [Download](https://www.docker.com/get-started) |
+| Docker Compose | v2.0 or higher      | Included with Docker                           |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+First, clone the project from GitHub:
 
 ```bash
 git clone https://github.com/KTajerbashi/React-Client.git
 cd React-Client
 
-# ساخت ایمیج و اجرای کانتینر در پس‌زمینه
+# Build the image and run the container in the background
 docker compose up -d --build
 
-# مشاهده لاگ‌های کانتینر
+# View container logs
 docker compose logs -f
 
-# توقف و حذف کانتینر
+# Stop and remove the container
 docker compose down
 
-# وارد پوشه اپلیکیشن شوید
+# Navigate to the application directory
 cd app-client
 
-# نصب وابستگی‌ها
+# Install dependencies
 npm install
 
-# اجرای سرور توسعه
+# Start the development server
 npm start
 
-
 React-Client/
-├── app-client/                     # کد منبع اصلی اپلیکیشن
-│   ├── src/                        # فایل‌های سورس
-│   │   ├── components/             # کامپوننت‌های React
-│   │   ├── hooks/                  # هوک‌های سفارشی
-│   │   ├── pages/                  # صفحات اصلی
-│   │   ├── services/               # سرویس‌های API و منطق کسب‌وکار
-│   │   ├── styles/                 # فایل‌های استایل (CSS, SCSS, ...)
-│   │   ├── types/                  # تعاریف TypeScript
-│   │   ├── utils/                  # توابع کمکی
-│   │   ├── App.tsx                 # کامپوننت اصلی
-│   │   ├── index.tsx               # نقطه ورود اپلیکیشن
-│   │   └── react-app-env.d.ts      # تعاریف محیطی React
-│   ├── public/                     # فایل‌های استاتیک عمومی
-│   │   ├── index.html              # فایل HTML اصلی
-│   │   └── favicon.ico             # آیکون مرورگر
-│   ├── package.json                # وابستگی‌ها و اسکریپت‌ها
-│   ├── tsconfig.json               # تنظیمات TypeScript
-│   └── Dockerfile                  # Dockerfile برای ساخت ایمیج
-├── docker-compose.yml              # تنظیمات Docker Compose
-├── .env.example                    # نمونه فایل متغیرهای محیطی
-├── .gitignore                      # فایل‌های نادیده گرفته شده در Git
-└── README.md                       # این فایل
+├── app-client/                     # Main application source code
+│   ├── src/                        # Source files
+│   │   ├── components/             # React components
+│   │   ├── hooks/                  # Custom hooks
+│   │   ├── pages/                  # Main pages
+│   │   ├── services/               # API services and business logic
+│   │   ├── styles/                 # Style files (CSS, SCSS, ...)
+│   │   ├── types/                  # TypeScript type definitions
+│   │   ├── utils/                  # Utility functions
+│   │   ├── App.tsx                 # Main component
+│   │   ├── index.tsx               # Application entry point
+│   │   └── react-app-env.d.ts      # React environment definitions
+│   ├── public/                     # Public static files
+│   │   ├── index.html              # Main HTML file
+│   │   └── favicon.ico             # Browser favicon
+│   ├── package.json                # Dependencies and scripts
+│   ├── tsconfig.json               # TypeScript configuration
+│   └── Dockerfile                  # Dockerfile for building the image
+├── docker-compose.yml              # Docker Compose configuration
+├── .env.example                    # Example environment variables file
+├── .gitignore                      # Git ignored files
+└── README.md                       # This file
 ```
-
----
-
-## ✨ نکات مهم بعد از کپی کردن فایل
-
-1.  **فایل `.env.example`**: حتماً یک فایل `.env.example` در ریشه پروژه ایجاد کنید تا تیم شما بدانند چه متغیرهایی نیاز است.
-2.  **فایل `LICENSE`**: اگر مجوز خاصی دارید، یک فایل `LICENSE` در کنار README ایجاد کنید. در غیر این صورت، بخش مجوز را حذف کنید.
-3.  **لینک‌ها**: تمام لینک‌های داده شده (مثل لینک مخزن، ایمیل و ...) را با اطلاعات خودتان جایگزین کنید.
-4.  **تصاویر (Screenshots)**: اگر از اپلیکیشن عکس دارید، آن را در پوشه `assets` قرار دهید و در README از آن استفاده کنید.
-5.  **بج‌ها (Badges)**: برای حرفه‌ای‌تر شدن، می‌توانید بج‌ها را از [shields.io](https://shields.io/) به‌روز کنید.
-
-اگر نیاز به تغییر یا افزودن بخش خاصی دارید، خوشحال می‌شوم کمک کنم!
