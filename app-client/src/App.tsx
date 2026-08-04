@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Dashboard from "./pages/Dashboard";
-import User from "./pages/User";
-import Services from "./pages/Services";
+import Layout from "./components/Layout.tsx";
+import Dashboard from "./pages/Dashboard.tsx";
+import User from "./pages/User.tsx";
+import Services from "./pages/Services.tsx";
 import "./App.css";
 
 function App() {
