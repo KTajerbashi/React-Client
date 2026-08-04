@@ -1,6 +1,6 @@
 # همه کانتینرها را متوقف و حذف کنید
-docker stop mongo-db mongo-ui
-docker rm mongo-db mongo-ui
+-   docker stop mongo-db mongo-ui
+-   docker rm mongo-db mongo-ui
 
 # شبکه را حذف کنید
 docker network rm mongo-network
